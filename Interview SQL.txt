@@ -1,0 +1,116 @@
+1. What types of SQL commands (or SQL subsets) do you know?
+Data Definition Language (DDL) – to define and modify the structure of a database.
+Data Manipulation Language (DML) – to access, manipulate, and modify data in a database.
+Data Control Language (DCL) – to control user access to the data in the database and give or revoke privileges to a specific user or a group of users.
+Transaction Control Language (TCL) – to control transactions in a database.
+Data Query Language (DQL) – to perform queries on the data in a database to retrieve the necessary information from it.
+
+
+2. What is the difference between NOSQL and SQL?
+SQL	                                   NOSQL
+It is a relational data model.	        It is a non-relational data model.
+Vertical scaling is more common.	Supports horizontal scaling.
+Handles structured data.	        Handles large and unstructured data.
+Fixed schema structure.	                Flexible structure.
+Schema-based.	                        Schema-less.
+
+
+3. List the different types of relationships in SQL.
+
+One-to-One (1:1) Relationship: In this type of relationship, each record in the first table is associated with only one record in the second table, and vice versa. This is typically used when the two tables have a common attribute or key, and the second table contains additional information about the first table.
+
+One-to-Many (1:N) Relationship: In this type of relationship, each record in the first table can be associated with multiple records in the second table, but each record in the second table is associated with only one record in the first table. This is used when one record in the first table can have multiple related records in the second table.
+ 
+Many-to-One (N:1) Relationship: This is the inverse of the one-to-many relationship. In this type of relationship, each record in the second table can be associated with multiple records in the first table, but each record in the first table is associated with only one record in the second table. This is used when multiple records in the second table are related to one record in the first table.
+ 
+Many-to-Many (N:N) Relationship: In this type of relationship, each record in the first table can be associated with multiple records in the second table and vice versa. This requires the use of an intermediary table, often called a junction table, which contains foreign keys to both the first and second tables. This is used when multiple records in each table can be related to multiple records in the other table.
+
+
+4. What are Tables and Fields?
+In a relational database, a table is a collection of data organized in rows and columns. Tables are used to store and manage data in a structured way, with each row representing a unique record and each column representing specific information about the record. Tables are often named according to the type of data they contain, such as "customers", "orders", or "employees".
+
+A field, also known as a column or an attribute, is a single information stored in a table. Each field is named and has a specific data type, such as text, number, date, or Boolean, that determines the type of data that can be stored in the field. For example, a "customers" table might have fields for the customer's name, address, phone number, and email address.
+
+Fields can also have other properties, such as a maximum length or a default value, that define how the data is stored and how it can be used. In addition, fields can be used to define relationships between tables by referencing the primary key of another table or by creating foreign keys that link related records across different tables.
+
+
+
+5. What is the purpose of an index in SQL, and how does it work?
+An index is used to improve the performance of queries by allowing for faster data retrieval. It creates a separate data structure that stores the values of one or more columns and allows faster access to the data based on those values.
+
+
+6. What is ETL in SQL?
+ETL (Extract, Transform, Load) is a common process used in data warehousing and business intelligence to move data from various sources into a data warehouse or database. The process involves three steps:
+ 
+
+Extract: In this step, data is extracted from various sources such as databases, files, or web services. This may involve using SQL queries to extract data from databases, APIs, or web scraping tools to extract data from web services or files.
+ 
+Transform: Once the data has been extracted, it is transformed or cleaned to make it suitable for storage and analysis. This may involve applying filters, aggregating data, or converting data types. SQL is commonly used to transform data as part of the ETL process.
+ 
+Load: The final step is to load the transformed data into a data warehouse or database. This may involve loading data into tables, creating indexes, or performing other database operations.
+ 
+The ETL process is critical for data integration, as it allows organizations to collect data from various sources, transform it into a consistent format, and store it in a central location for analysis and reporting. ETL tools such as Microsoft SQL Server Integration Services (SSIS) or Talend can automate much of the ETL process and provide a visual interface for designing and managing data flows.
+
+
+7. What are the types of SQL JOINS?
+INNER JOIN: It returns only the matching rows between two tables. It combines rows from two or more tables where the values in the common columns match.
+ 
+LEFT JOIN: It returns all the left and the matching rows from the right table. The result will contain null values for the right table's columns if there are no matches.
+ 
+RIGHT JOIN: It returns all the rows from the right table and the matching ones from the left table. The result will contain null values for the left table's columns if there are no matches.
+ 
+FULL OUTER JOIN: It returns all the rows from both tables, including unmatched ones. If there are no matches, the result will contain null values for the table's columns that don't have a matching row.
+ 
+
+There is also a CROSS JOIN, which returns the Cartesian product of the two tables, which combines every row from the first table with all rows from the second table. However, unlike the other JOIN types, it doesn't use a join condition to match the rows between the tables.
+
+8. What are Aggregate and Scalar functions?
+In database management systems, there are two main types of functions used to manipulate data: aggregate functions and scalar functions.
+
+Aggregate functions perform calculations on a set of values and return a single value representing a summary of that set. These functions are typically used with a GROUP BY clause to group data by one or more columns and then perform calculations on each group. Examples of aggregate functions include SUM, AVG, COUNT, MAX, and MIN.
+
+ 
+Scalar functions, on the other hand, operate on a single value and also return a single value. They can manipulate data in various ways, such as performing string operations, date calculations, or mathematical computations. Examples of scalar functions include CONCAT (to concatenate two strings), DATEADD (to add a specified amount of time to date), and ABS (to return the absolute value of a number).
+
+
+Aggregate functions are used to perform calculations on data sets and return a single value representing some summary of that set. In contrast, scalar functions operate on a single value and return a single value. Both functions are commonly used in database management systems to manipulate and analyze data.
+
+
+9. What are the different types of normalizations?
+In database design, several types of normalization are used to reduce data redundancy, improve data integrity, and ensure efficient data retrieval. The different types of normalizations are 
+
+First Normal Form (1NF): This normalization ensures that the data in each table's column is atomic, meaning that it cannot be further broken down into smaller pieces. It also eliminates duplicate rows from the table.
+ 
+Second Normal Form (2NF): This normalization eliminates partial dependencies by ensuring that each non-key column in a table is dependent on the entire primary key rather than on its part of it.
+ 
+Third Normal Form (3NF): This normalization eliminates transitive dependencies by ensuring that each non-key column in a table is dependent only on the primary key and not on any other non-key columns.
+ 
+Boyce-Codd Normal Form (BCNF): This normalization is an extension of 3NF and ensures that each determinant in a table is a candidate key.
+ 
+Fourth Normal Form (4NF): This normalization eliminates multivalued dependencies by ensuring that each non-key column in a table is dependent on the entire primary key and not on any subsets.
+ 
+Fifth Normal Form (5NF): This normalization is known as the Project-Join Normal Form and ensures that each table in a database has a single theme or topic.
+ 
+The normalization process is iterative, and it may be necessary to apply multiple normalizations to achieve the desired data organization and efficiency level.
+
+
+10. What is a primary key, and why is it important in a database?
+A primary key is a crucial component of a Database as it serves as a unique identifier in a table for each record. The primary key enables efficient data retrieval and manipulation while ensuring data integrity by preventing duplicate entries.
+
+Using a primary key, a database management system can quickly locate and retrieve data from a table without scanning the entire table. This makes data retrieval more efficient, especially in large databases with many records. Additionally, primary keys allow for the easy creation of relationships between tables, simplifying complex queries and making database maintenance easier.
+
+
+11. What is a foreign key, and how is it different from a primary key?
+A foreign key is a database constraint that establishes a link between two tables in a relational database. It is used to maintain referential integrity. It is a field or set of fields in one table that also refers to the primary key of another table. It differs from a primary key in that it does not have to be unique and can be used to establish relationships between tables.
+
+12. How would you retrieve all the records from a " customers " table in SQL?
+SELECT * FROM customers;
+
+13. What is the difference between SQL's WHERE and HAVING clauses?
+In SQL, the WHERE clause is used to filter rows based on a condition on a column, while the HAVING clause is used to filter groups based on an aggregate function.
+
+The WHERE clause is applied before any grouping takes place and filters individual rows based on a condition. On the other hand, the HAVING clause is applied after the grouping and filter groups based on the results of aggregate functions such as COUNT, SUM, AVG, etc.
+
+14. What is the difference between a function and a stored procedure in SQL?
+In SQL, a function returns a value, while a stored procedure does not necessarily return a value and may execute a series of operations or tasks. Functions can be used as part of a SQL statement or expression to return a value. In contrast, stored procedures can be used to encapsulate a series of SQL statements and can be executed as a single unit. Additionally, functions can be used within stored procedures, but stored procedures cannot be used within functions.
+
